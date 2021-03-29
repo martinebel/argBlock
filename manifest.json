@@ -1,0 +1,43 @@
+{
+  "background": {
+    "scripts": [
+      "src/common.js",
+      "src/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.clarin.com/*",
+        "*://*.lanacion.com.ar/*",
+        "*://*.perfil.com/*"
+      ],
+      "js": ["src/contentScript.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": {
+      "128": "src/icon/argblock.png"
+    }
+  },
+  "description": "Bloquea los Paywalls de sitios de noticias argentinos.",
+  "icons": {
+    "128": "src/icon/argblock.png"
+  },
+  "manifest_version": 2,
+  "name": "argBlock",
+  "short_name": "argBlock",
+
+  "permissions": [
+    "cookies",
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.clarin.com/*",
+    "*://*.lanacion.com.ar/*",
+    "*://*.perfil.com/*"
+  ],
+  "version": "1.0.0"
+}
