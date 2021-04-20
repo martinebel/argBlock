@@ -67,6 +67,24 @@ function paywallClarin()
   page.removeAttribute('style');
 }
 
+/*------------------------------------------------------------------------------------------------
+---------------------------- ELPAIS.COM ----------------------------------------------------------
+------------------------------------------------------------------------------------------------*/
+if (matchDomain('elpais.com')) {
+  //esperar a que aparezcan los elementos del paywall
+  waitForElm('.fc-ab-root').then(elm => paywallElPais());
+}
+
+//eliminar paywall de limite de noticias
+function paywallElPais()
+{
+  const paywall = document.querySelector('.fc-ab-root');
+  const body = document.querySelector('body');
+
+
+  removeDOMElement(paywall);
+  body.removeAttribute('style');
+}
 
 /*------------------------------------------------------------------------------------------------
 ---------------------------- FUNCIONES AUXILIARES ------------------------------------------------
@@ -102,3 +120,4 @@ function removeDOMElement (...elements) {
     if (element) { element.remove();}
   }
 }
+
