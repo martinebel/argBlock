@@ -10,7 +10,8 @@
       "matches": [
         "*://*.clarin.com/*",
         "*://*.lanacion.com.ar/*",
-        "*://*.perfil.com/*"
+        "*://*.perfil.com/*",
+        "*://*.elpais.com/*"
       ],
       "js": ["src/contentScript.js"]
     }
@@ -35,9 +36,7 @@
     "tabs",
     "webRequest",
     "webRequestBlocking",
-    "*://*.clarin.com/*",
-    "*://*.lanacion.com.ar/*",
-    "*://*.perfil.com/*"
+    "<all_urls>"
   ],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
