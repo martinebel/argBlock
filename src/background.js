@@ -1,8 +1,19 @@
 const enabledSites = [
   'clarin.com',
   'lanacion.com.ar',
-  'perfil.com'
+  'perfil.com',
+  'elpais.com'
 ];
+
+chrome.webRequest.onBeforeRequest.addListener(
+  function() { return {cancel: true}; },
+  {
+    urls: ["https://elpais.com/arc/subs/p.min.js",
+          "https://ep00.epimg.net/js/prisa/user.min.js?i=1"], // Change this to a more specific pattern
+    types: ["script"]
+  },
+  ["blocking"]
+);
 
 chrome.tabs.onUpdated.addListener(function (tabId, info, tab) {
   updateBadge(tab);
@@ -35,3 +46,4 @@ function isSiteEnabled (details) {
 
   return status;
 }
+
