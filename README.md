@@ -3,7 +3,6 @@
 Permite leer diarios argentinos con paywall.
 
 Soporta:
-- clarin.com
 - lanacion.com.ar
 - perfil.com
 - elpais.com
